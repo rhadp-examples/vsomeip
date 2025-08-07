@@ -36,10 +36,13 @@ jobs:
 
       - name: debug
         run: |
-          pwd
-          echo "runner.workspace: ${{ runner.workspace }}"
-          ls -la .
-          ls -la build
+          ls -la "${{ runner.workspace }}/vsomeip/build"
+          ls -la "${{ runner.workspace }}/vsomeip/build/lib"
+          ls -la "${{ runner.workspace }}/vsomeip/build/bin"
+          #pwd
+          #echo "runner.workspace: ${{ runner.workspace }}"
+          #ls -la .
+          #ls -la build
           #ls -la build/vsomeip
           
       #- name: Run Unit tests
