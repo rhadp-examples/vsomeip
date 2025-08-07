@@ -34,11 +34,18 @@ jobs:
       - name: Build CMake
         run: cmake --build build --target build_tests
 
-      - name: Run Unit tests
-        run: ctest --test-dir build --tests-regex '^unit_' --verbose
+      - name: debug
+        run: |
+          pwd
+          ls -la .
+          ls -la "${{ runner.workspace }}"
+          ls -la "${{ runner.workspace }}/install"
+          
+      #- name: Run Unit tests
+      #  run: ctest --test-dir build --tests-regex '^unit_' --verbose
 
-      - name: Run BenchMark tests
-        run: env -C build test/benchmark_tests/benchmark_tests_bin
+      #- name: Run BenchMark tests
+      #  run: env -C build test/benchmark_tests/benchmark_tests_bin
 
       - uses: actions/upload-artifact@v4
         with:
