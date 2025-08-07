@@ -37,11 +37,10 @@ jobs:
       - name: debug
         run: |
           pwd
+          echo "runner.workspace: ${{ runner.workspace }}"
           ls -la .
-          ls -la "${{ runner.workspace }}"
-          ls -la "${{ runner.workspace }}/build"
-          ls -la "${{ runner.workspace }}/build/vsomeip"
-          
+          ls -la build
+          #ls -la build/vsomeip
           
       #- name: Run Unit tests
       #  run: ctest --test-dir build --tests-regex '^unit_' --verbose
