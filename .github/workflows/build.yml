@@ -32,7 +32,7 @@ jobs:
         run: cmake -Bbuild -DBOOST_ROOT=/home/runner/boost/boost/ -DGTEST_ROOT=/usr/src/googletest
 
       - name: Build CMake
-        run: cmake --build . --config Release #cmake --build build --target build_tests
+        run: cmake --build build --config Release #cmake --build build --target build_tests
 
       - name: debug
         run: |
